@@ -1,52 +1,55 @@
-import axios from "axios";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import z from "zod";
 
-const api = axios.create({
-    baseURL: 'http://localhost:8080/api',
-    timeout: 6000,
-    headers: {
-        'Content-Type': 'application/json',
-    },
-});
+const schema = z.object({
+    key: z.string().min(4, 'A chave deve ter pelo menos 4 caracteres'),
+    note: z.string().min(1, 'Escreva algo, o segredo não pode estar vazio'),
+})
 
-api.interceptors.response.use(
-    (response) => response,
-    (error) => {
-        if (error.response) {
-            const status = error.response.status;
-            const message = error.response.data?.message || 'Unexpected server error'
+export default function CadernoSegredos() {
+    const { register, handleSubmit, reset, formState: { errors } } = useForm({
+        resolver: zodResolver(schema),
+    });
 
-            console.error(`[HTTP ERROR ${status}]`, error.response.data);
+    const onSubmit = (data) => {
+        try {
+            const textoCifrado = CryptoJS.AES.encrypt(data.note, data.key).toString();
+            const notasSalvas = JSON.parse(localStorage.getItem('secure-notes') || '[]');
+            const novaLista = [...notasSalvas, { id: Date.now(), conteudo: textoCifrado, dataCriacap: new Date().toLocaleDateString() }];
 
-            switch (status) {
-                case 400:
-                    toast.error(`Invalid Request (400): ${message}`);
-                    break;
-                case 401:
-                    toast.error('Not Authorized (401). Verifique suas credenciais.');
-                    break;
-                case 403:
-                    toast.error('Acess Denied (403).');
-                    break;
-                case 404:
-                    toast.error('Recourse Not Found (404).')
-                    break;
-                case 500:
-                    toast.error('Internal Server Error (500). Tente novamente mais tarde.')
-                default:
-                    toast.error(`Error (${status}): ${message}`)
-                    break;
-            }
-    
-        } else if (error.request) {
-            console.error('[HTTP NET ERROR]: No Server Response.', error.request);
+            localStorage.setItem('secure-notes', JSON.stringify(novaLista));
 
-            toast.error('Não foi possível se conectar ao servidor');
-        }else{
-            console.error('[CONFIG ERROR]:', error.message);
+            toast.success('Seu segredo foi criptografado e armazenado com sucesso!');
+            reset();
+        } catch (error) {
+            toast.error('Erro ao criptografar a mensagem.')
         }
-        return Promise.reject(error);
     }
-);
 
-export default api;
+    return (
+        <div>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <div>
+                    <label>Chave Mestra:</label>
+                    <input type="password"
+                        {...register('key')}
+                        placeholder="Digite a sua chave de segurança..." />
+                    {errors.key && <span>{errors.key.message}</span>}
+                </div>
+
+                <div>
+                    <label>Seu Segredo:</label>
+                    <textarea
+                        {...register('note')}
+                        rows={"5"}
+                        placeholder="Escreva algo confidencial..." />
+                    {errors.note && <span>{errors.note.message}</span>}
+                </div>
+
+                <button type="submit">Criptografar e Salvar</button>
+            </form>
+        </div>
+    )
+}
