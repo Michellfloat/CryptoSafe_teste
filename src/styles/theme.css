@@ -1,0 +1,45 @@
+/* src/styles/theme.css */
+
+/* Tema Padrão: Cofre Escuro (Cyber Security) */
+:root, [data-theme="dark"] {
+  --bg-main: #0b0f17;
+  --bg-surface: #111827;
+  --bg-card: #1f293d;
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --accent-gold: #f59e0b;
+  --accent-gold-glow: rgba(245, 158, 11, 0.25);
+  --accent-cyber: #10b981;
+  --accent-cyber-glow: rgba(16, 185, 129, 0.25);
+  --accent-danger: #ef4444;
+  --border-color: #374151;
+  --border-vault: #4b5563;
+  --header-bg: rgba(17, 24, 39, 0.85);
+  --shadow-vault: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Tema Alternativo: Cofre Claro */
+[data-theme="light"] {
+  --bg-main: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --accent-gold: #d97706;
+  --accent-gold-glow: rgba(217, 119, 6, 0.15);
+  --accent-cyber: #059669;
+  --accent-cyber-glow: rgba(5, 150, 105, 0.15);
+  --accent-danger: #dc2626;
+  --border-color: #e2e8f0;
+  --border-vault: #cbd5e1;
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --shadow-vault: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
