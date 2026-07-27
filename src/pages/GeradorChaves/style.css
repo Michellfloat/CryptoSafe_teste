@@ -1,0 +1,129 @@
+
+.gerador-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1.5rem;
+}
+
+.gerador-card {
+  width: 100%;
+  max-width: 550px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-vault);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-vault);
+}
+
+.gerador-card h2 {
+  margin-top: 0;
+  color: var(--text-primary);
+  font-size: 1.75rem;
+}
+
+.gerador-desc {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  margin-bottom: 2rem;
+}
+
+.display-box {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.chave-input-display {
+  flex: 1;
+  padding: 0.9rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--accent-cyber);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  outline: none;
+}
+
+.btn-copiar {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0 1.2rem;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-copiar:hover:not(:disabled) {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.btn-copiar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.controles-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.controle-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.controle-slider input[type="range"] {
+  accent-color: var(--accent-gold);
+  cursor: pointer;
+}
+
+.opcoes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent-gold);
+  cursor: pointer;
+}
+
+.btn-gerar-chave {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--accent-gold), #d97706);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px var(--accent-gold-glow);
+  transition: transform 0.2s;
+}
+
+.btn-gerar-chave:hover {
+  transform: translateY(-2px);
+}
