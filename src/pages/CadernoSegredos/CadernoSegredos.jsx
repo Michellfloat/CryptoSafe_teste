@@ -2,6 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import z from "zod";
+import "./style.css"
 
 const schema = z.object({
     key: z.string().min(4, 'A chave deve ter pelo menos 4 caracteres'),
