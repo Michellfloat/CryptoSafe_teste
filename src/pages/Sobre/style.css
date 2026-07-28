@@ -1,0 +1,78 @@
+
+.sobre-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.sobre-content {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-vault);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-vault);
+}
+
+.sobre-content h2 {
+  margin-top: 0;
+  color: var(--text-primary);
+  font-size: 2rem;
+}
+
+.lead-text {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 2rem 0;
+}
+
+.info-block {
+  margin-bottom: 2rem;
+}
+
+.info-block h3 {
+  color: var(--accent-gold);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-block p {
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.tech-stack-section {
+  margin-top: 2.5rem;
+  background-color: var(--bg-surface);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.tech-stack-section h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.chips-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-chip {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-vault);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
