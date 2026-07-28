@@ -1,6 +1,6 @@
 
 import { useState } from "react"
-import "./style.css"
+import "./gerador.css"
 import { toast } from "react-toastify";
 
 export default function GeradorChaves() {
@@ -80,7 +80,7 @@ export default function GeradorChaves() {
                         <label className="checkbox-label">
                             <input type="checkbox"
                                    checked={incluirSimbolos}
-                                   onChange={(e) => setIncluirNumeros(e.target.checked)} />
+                                   onChange={(e) => setIncluirSimbolos(e.target.checked)} />
                                    Símbolos (!@#$...)
                         </label>
                     </div>

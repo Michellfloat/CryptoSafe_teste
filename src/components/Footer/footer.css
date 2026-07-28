@@ -1,0 +1,47 @@
+
+.main-footer {
+  background-color: var(--bg-card);
+  border-top: 1px solid var(--border-vault);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+.footer-badge {
+  background-color: var(--accent-gold-glow);
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  padding: 0.25rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.footer-content p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.footer-content strong {
+  color: var(--text-primary);
+}
+
+.footer-content small {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  opacity: 0.85;
+}

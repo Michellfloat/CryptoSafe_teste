@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import "./style.css"
+import "./segredos.css"
 export default function SegredosArmazenados() {
     const [notas, setNotas] = useState([]);
 
