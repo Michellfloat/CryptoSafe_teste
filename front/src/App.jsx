@@ -47,3 +47,5 @@ export default function App() {
     </div>
   );
 }
+
+{/*TODO:Inserir novamente o Tema claro e Escuro do Site... E desenvolver logo via NANO BANANA*/}
