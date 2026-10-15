@@ -1,0 +1,6 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.compiler.source": "25",
+    "java.compiler.target": "25",
+    "java.compile.nullAnalysis.mode": "automatic"
+}
