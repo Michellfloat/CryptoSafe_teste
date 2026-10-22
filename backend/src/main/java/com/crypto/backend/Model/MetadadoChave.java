@@ -38,7 +38,7 @@ public class MetadadoChave {
     private String algoritmo; // Exemplo: "PBKDF2WithHmacSHA256" ou "AES-GCM"
 
     @Column(name = "iteracoes", nullable = false)
-    private Integer iteracoes;
+    private String iteracoes;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_id", nullable = false, unique = true)
